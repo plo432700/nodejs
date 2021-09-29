@@ -1353,6 +1353,38 @@ exit
 - `db.表名.find()`
   - 查看表中的详细信息
 
+MongoDB 创建数据库
+语法
+MongoDB 创建数据库的语法格式如下：
+
+use DATABASE_NAME
+如果数据库不存在，则创建数据库，否则切换到指定数据库。
+
+实例
+以下实例我们创建了数据库 runoob:
+
+> use runoob
+switched to db runoob
+> db
+runoob
+> 
+如果你想查看所有数据库，可以使用 show dbs 命令：
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> 
+可以看到，我们刚创建的数据库 runoob 并不在数据库的列表中， 要显示它，我们需要向 runoob 数据库插入一些数据。
+
+> db.runoob.insert({"name":"菜鸟教程"})
+WriteResult({ "nInserted" : 1 })
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+runoob  0.000GB
+
 ## 在Node中如何操作MongoDB数据库
 
 ### 使用官方的`MongoDB`包来操作
